@@ -1,0 +1,105 @@
+<!--
+    This is a simple HTML page with a gradient background, 
+    a title, and two buttons that navigate to other pages.
+    Author: Antos1812
+
+
+       _                 
+      / \              
+     / _ \  
+    / /_\ \ 
+   / /   \ \
+  /_/     \_\NTOS  
+
+-->
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Main Page</title>
+    <style>
+        body {
+            background-image: linear-gradient(#3d3c67, #292843);
+            height: 900px;
+            margin: 0;
+        }
+
+        /* Titles */
+        #Title {
+            font-size: 75px;
+            margin-top: 80px;
+            text-align: center;
+            font-family: 'Mononoki', monospace;
+            color: #d8d8ea;
+        }
+
+        #Stitle {
+            font-size: 25px;
+            font-family: 'Mononoki', monospace;
+            font-weight: bold;
+            color: #d8d8ea;
+            position: absolute;
+            top: 0;
+            left: 10px;
+            z-index: 2;
+        }
+
+        /* Header */
+        #Glowa {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background-image: linear-gradient(#2d2c3b, #373649);
+            z-index: 1;
+        }
+
+        /* Button styles */
+        .button {
+            position: absolute;
+            top: 20px;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-family: 'Mononoki', monospace;
+            background-color: #29275c;
+            color: #d8d8ea;
+            border: 2px solid #1d1c43;
+            border-radius: 12px;
+            cursor: pointer;
+            z-index: 3;
+            transition: background-color 0.43s;
+        }
+
+        .button:hover {
+            background-color: #3b3896;
+        }
+
+        .buttonK {
+            left: 240px; 
+        }
+
+        .buttonT {
+            left: 380px; 
+        }
+    </style>
+</head>
+
+<body>
+    <header id="Glowa">
+        <h2 id="Stitle">Main Page</h2>
+    </header>
+    <h1 id="Title">Welcome!</h1>
+    <button class="button buttonK" onclick="navigateTo('kalkulator.html')">Calculator</button>
+    <button class="button buttonT" onclick="navigateTo('Odliczacz.html')">Timer</button>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+
+</html>
