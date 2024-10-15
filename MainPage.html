@@ -3,14 +3,12 @@
     a title, and two buttons that navigate to other pages.
     Author: Antos1812
 
-
-       _                 
+       _                  
       / \              
      / _ \  
     / /_\ \ 
    / /   \ \
   /_/     \_\NTOS  
-
 -->
 
 <!DOCTYPE html>
@@ -34,6 +32,16 @@
             font-family: 'Mononoki', monospace;
             color: #d8d8ea;
         }
+
+        #TextTo, #PodTitle, #TextWebsite {
+            font-family: 'Mononoki', monospace;
+            color: #d8d8ea;
+            text-align: center;
+        }
+
+        #TextTo { font-size: 40px; margin-top: 10px; }
+        #PodTitle { font-size: 45px; margin-top: 20px; }
+        #TextWebsite { font-size: 68px; margin-top: 10px; }
 
         #Stitle {
             font-size: 25px;
@@ -73,16 +81,54 @@
             transition: background-color 0.43s;
         }
 
-        .button:hover {
+        .button:hover { background-color: #3b3896; }
+        .buttonK { left: 240px; }
+        .buttonT { left: 380px; }
+        .buttonGitHub { left: 485px; }
+
+        #ThemeButtonD, #ThemeButtonW, #ThemeButtonDef {
+            position: absolute;
+            top: 20px;
+            width: 48px;
+            height: 30px;
+            font-size: 15px;
+            border: 3px solid #1d1c43;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.43s;
+            z-index: 11;
+        }
+
+        #ThemeButtonD {
+            right: 83px;
+            color: white;
+            background-color: #2f2f30;
+        }
+
+        #ThemeButtonW {
+            right: 150px;
+            color: black;
+            background-color: #e0e7ed;
+        }
+
+        #ThemeButtonDef {
+            right: 20px;
+            color: white;
+            background-color: #799fbd;
+        }
+
+        #ThemeButtonD:hover, #ThemeButtonW:hover, #ThemeButtonDef:hover {
             background-color: #3b3896;
         }
 
-        .buttonK {
-            left: 240px; 
-        }
-
-        .buttonT {
-            left: 380px; 
+        .themeB, .themeB1, .themeBdefault {
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: inherit;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -92,13 +138,62 @@
         <h2 id="Stitle">Main Page</h2>
     </header>
     <h1 id="Title">Welcome!</h1>
-    <button class="button buttonK" onclick="navigateTo('kalkulator.html')">Calculator</button> <!-- This .html whil not work cause you dont have "kalkulator.html" on your pc, I have this and the other one on my Github
-                                                                                                     so you can just download it, thats it, also you can check how's look the calculator page and timer page on my github-->
+    <h2 id="TextTo">to</h2>
+    <h2 id="PodTitle">Antos1812</h2>
+    <h2 id="TextWebsite">Website!</h2>
+
+    <button class="button buttonK" onclick="navigateTo('kalkulator.html')">Calculator</button>
     <button class="button buttonT" onclick="navigateTo('Odliczacz.html')">Timer</button>
+    <button class="button buttonGitHub" onclick="navigateTo('https://github.com/Antos1812')">GitHub</button>
+
+    <div id="ThemeButtonD">
+        <button class="themeB" onclick="changeTheme()">Dark</button>
+    </div>
+
+    <div id="ThemeButtonW">
+        <button class="themeB1" onclick="changeTheme1()">White</button>
+    </div>
+
+    <div id="ThemeButtonDef">
+        <button class="themeBdefault" onclick="changeThemeDefault()">Def.</button>
+    </div>
 
     <script>
-        function navigateTo(page) {
-            window.location.href = page;
+        // Navigates to a new page or external URL when a button is clicked
+        function navigateTo(url) {
+            window.open(url, '_blank');
+        }
+
+        // Toggles between dark and light gradient themes
+        function changeTheme() {
+            const body = document.body;
+            const currentBackground = body.style.backgroundImage;
+
+            // Switch between two gradient backgrounds
+            if (currentBackground === 'linear-gradient(#292843,#555a5e)') {
+                body.style.backgroundImage = 'linear-gradient(#3d3c67, #292843)';
+            } else {
+                body.style.backgroundImage = 'linear-gradient(#292843,#555a5e)';
+            }
+        }
+
+        // Applies a lighter theme for a more neutral look
+        function changeTheme1() {
+            const body = document.body;
+            const currentBackground = body.style.backgroundImage;
+
+            // Check if the background matches the specific gradient
+            if (currentBackground === 'linear-gradient(#292843,#dedde7)') {
+                body.style.backgroundImage = 'linear-gradient(#3d3c67, #292843)';
+            } else {
+                body.style.backgroundImage = 'linear-gradient(#292843,#dedde7)';
+            }
+        }
+
+        // Resets the theme to the default gradient
+        function changeThemeDefault() {
+            const body = document.body;
+            body.style.backgroundImage = 'linear-gradient(#3d3c67, #292843)';
         }
     </script>
 </body>
