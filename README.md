@@ -9,9 +9,13 @@
 - **Gradient Background**: The background is styled with a linear gradient for a visually appealing look.
 - **Responsive Layout**: The layout is designed to be flexible with absolute positioning.
 - **Navigation Buttons**: Two buttons redirect users to the respective pages.
-- 
+- **Changing Background-theme**: three buttons, White, Dark and Deafult.
 ![image](https://github.com/user-attachments/assets/b5f76092-d0e6-47e5-a10a-c78d25d28efc)
 
+![image](https://github.com/user-attachments/assets/f66afd9e-35a2-46d4-8252-69a295908fef)
+
+**Update 15.10.2024** I added couple descriptions to some functions and I reorganized whole script, also added new functions,
+Different theme, button for GitHub and more Main text.
  
 ## Technologies Used
 
