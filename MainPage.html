@@ -65,6 +65,37 @@
             z-index: 1;
         }
 
+        #Description0
+        {
+            font-size: 17px;
+            font-family: 'Mononoki', monospace;
+            color: #d8d8ea;
+            position: absolute;
+            margin-left: 20px;
+
+        }
+
+        #Description1
+        {
+            font-size: 22px;
+            font-family: 'Monoki', monospace;
+            color:#d8d8ea;
+            position:absolute;
+            margin-left: 20px;
+            margin-top: 150px;
+        }
+
+        #DescriptionText
+        {
+            font-size: 18px;
+            font-family: 'Monoki', monospace;
+            color:#e8e8f5;
+            position: absolute;
+            margin-left: 30px;
+            margin-top: 190px;
+            
+        }
+
         /* Button styles */
         .button {
             position: absolute;
@@ -130,6 +161,59 @@
             font-size: inherit;
             cursor: pointer;
         }
+
+        #buttonToggleText0
+        {           
+            position: absolute;
+            margin-left: 162px;
+            margin-top: 155px; 
+            border-radius: 5px;      
+            z-index: 15;
+        }
+
+        #buttonToggleText0:hover
+        {
+            background-color: #a4a4a4;
+        }
+
+        .socials
+        {
+            font-size: 16px;
+            font-family: 'Mononoki', monospace;
+            color: #3136ea;
+            position: absolute;
+            margin-left: 25px;
+            margin-top: 53px;
+        }
+
+        #Yt
+        {
+            margin-left: 100px;
+        }
+
+        #Itch
+        {
+            margin-left: 184px;
+        }
+
+        #gPlay
+        {
+            margin-left: 268px;
+        }
+
+    </style>
+
+    <style> /* Special "style" for imgAv0 "avatar" */
+        #imgAv0
+        {
+            position: absolute;
+            top: 10px;
+            margin-left: 150px;
+            margin-top: -4.5px;
+            border-radius: 25px;
+            border: 2.7px solid #1d1c43;
+            z-index: 13;
+        }
     </style>
 </head>
 
@@ -142,9 +226,30 @@
     <h2 id="PodTitle">Antos1812</h2>
     <h2 id="TextWebsite">Website!</h2>
 
+    <h4 id="Description0">My all <strong>socials</strong> and <strong>works</strong>!</h4>
+    <h4 id="Description1">Description</h4>
+    
+    <a class="socials" href="https://github.com/Antos1812" target="_blank">GitHub</a>
+    <a class="socials" id="Yt" href="https://www.youtube.com/@antos1812" target="_blank">Youtube</a>
+    <a class="socials" id="Itch" href="https://1nt4k.itch.io/" target="_blank">Itch.io</a>
+    <a class="socials" id="gPlay" href="https://play.google.com/store/apps/details?id=com.AntekTereniaTV.CzeresnioweCiastoTerenii" target="_blank">Google Play</a>
+
+    <img id="imgAv0" src="C:\Users\User\Desktop\www\MainPageFolder/avatarAntos1812.jpg" 
+         width="49" height="49">
+
     <button class="button buttonK" onclick="navigateTo('kalkulator.html')">Calculator</button>
     <button class="button buttonT" onclick="navigateTo('Odliczacz.html')">Timer</button>
     <button class="button buttonGitHub" onclick="navigateTo('https://github.com/Antos1812')">GitHub</button>
+    <button id="buttonToggleText0" onclick="toggleText0()" style="background-image: url('C:\\Users\\User\\Desktop\\www\\MainPageFolder\\arrowDown.jpg');
+            background-size: cover; width: 20px; height: 20px; border: none; transition: background-color 0.43s;"></button>
+
+    <h5 id="DescriptionText" style="display: none;">Website created by Antos1812, is about all my works, codes and more!
+        I'm an amateur programmer from Poland, who created three games, my two games are about my disabled sister Theresa,
+        and she is the main character in my games, you also have links to download these games on Itch.io and Google Play.
+        I'll be very happy if would idk comment somewhere my work and wish me luck!
+        Btw, have fun!</h5>
+
+
 
     <div id="ThemeButtonD">
         <button class="themeB" onclick="changeTheme()">Dark</button>
@@ -195,6 +300,22 @@
             const body = document.body;
             body.style.backgroundImage = 'linear-gradient(#3d3c67, #292843)';
         }
+
+        function toggleText0() {
+    var textToShow = document.getElementById("DescriptionText");
+    var buttonToggleText0 = document.getElementById("buttonToggleText0");
+
+    
+    if (buttonToggleText0) {
+       
+        if (textToShow.style.display === "none") {
+            textToShow.style.display = "block";
+        } else {
+            textToShow.style.display = "none";
+        }
+    }
+}
+
     </script>
 </body>
 
