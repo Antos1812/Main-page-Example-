@@ -16,6 +16,10 @@
 
 **Update 15.10.2024** I added couple descriptions to some functions and I reorganized whole script, also added new functions,
 Different theme, button for GitHub and more Main text.
+
+**Update 16.10.2024** I added Toogle button for the description text, plus function for this, also Socials links added for, yt, github, itch.io and google play. And extra avat img on the top-left corner of the website.
+![image](https://github.com/user-attachments/assets/74c8cc51-dc3f-43ea-a261-148c3e18b288)
+
  
 ## Technologies Used
 
