@@ -15,16 +15,20 @@
 <html lang="pl">
 
 <head>
+
     <meta charset="utf-8" />
     <title>Main Page</title>
+
     <style>
+
+        /* The backround of the whole website*/ 
         body {
             background-image: linear-gradient(#3d3c67, #292843);
             height: 900px;
             margin: 0;
         }
 
-        /* Titles */
+        
         #Title {
             font-size: 75px;
             margin-top: 80px;
@@ -43,6 +47,7 @@
         #PodTitle { font-size: 45px; margin-top: 20px; }
         #TextWebsite { font-size: 68px; margin-top: 10px; }
 
+        /*Small Title*/
         #Stitle {
             font-size: 25px;
             font-family: 'Mononoki', monospace;
@@ -54,7 +59,7 @@
             z-index: 2;
         }
 
-        /* Header */
+        /* Head */
         #Glowa {
             position: absolute;
             top: 0;
@@ -129,19 +134,19 @@
             transition: background-color 0.43s;
             z-index: 11;
         }
-
+        /*Dark*/
         #ThemeButtonD {
             right: 83px;
             color: white;
             background-color: #2f2f30;
         }
-
+        /*White*/
         #ThemeButtonW {
             right: 150px;
             color: black;
             background-color: #e0e7ed;
         }
-
+        /*Default*/
         #ThemeButtonDef {
             right: 20px;
             color: white;
@@ -185,7 +190,8 @@
             margin-left: 25px;
             margin-top: 53px;
         }
-
+        
+        /*Links*/
         #Yt
         {
             margin-left: 100px;
@@ -204,6 +210,7 @@
     </style>
 
     <style> /* Special "style" for imgAv0 "avatar" */
+        /*The Small img of the my avatar*/
         #imgAv0
         {
             position: absolute;
@@ -218,14 +225,18 @@
 </head>
 
 <body>
+
     <header id="Glowa">
         <h2 id="Stitle">Main Page</h2>
     </header>
+
+    <!--The main text on the web-->
     <h1 id="Title">Welcome!</h1>
     <h2 id="TextTo">to</h2>
     <h2 id="PodTitle">Antos1812</h2>
     <h2 id="TextWebsite">Website!</h2>
-
+     
+    <!--Description area-->
     <h4 id="Description0">My all <strong>socials</strong> and <strong>works</strong>!</h4>
     <h4 id="Description1">Description</h4>
     
@@ -234,23 +245,26 @@
     <a class="socials" id="Itch" href="https://1nt4k.itch.io/" target="_blank">Itch.io</a>
     <a class="socials" id="gPlay" href="https://play.google.com/store/apps/details?id=com.AntekTereniaTV.CzeresnioweCiastoTerenii" target="_blank">Google Play</a>
 
+    <!--Avatar area-->
     <img id="imgAv0" src="C:\Users\User\Desktop\www\MainPageFolder/avatarAntos1812.jpg" 
          width="49" height="49">
-
+    
+    <!--Buttons area-->
     <button class="button buttonK" onclick="navigateTo('kalkulator.html')">Calculator</button>
     <button class="button buttonT" onclick="navigateTo('Odliczacz.html')">Timer</button>
     <button class="button buttonGitHub" onclick="navigateTo('https://github.com/Antos1812')">GitHub</button>
+
     <button id="buttonToggleText0" onclick="toggleText0()" style="background-image: url('C:\\Users\\User\\Desktop\\www\\MainPageFolder\\arrowDown.jpg');
             background-size: cover; width: 20px; height: 20px; border: none; transition: background-color 0.43s;"></button>
 
-    <h5 id="DescriptionText" style="display: none;">Website created by Antos1812, is about all my works, codes and more!
+    <h5 id="DescriptionText" style="display: none; opacity: 0; transition: opacity 0.43s;">Website created by Antos1812, is about all my works, codes and more!
         I'm an amateur programmer from Poland, who created three games, my two games are about my disabled sister Theresa,
         and she is the main character in my games, you also have links to download these games on Itch.io and Google Play.
         I'll be very happy if would idk comment somewhere my work and wish me luck!
         Btw, have fun!</h5>
 
 
-
+    <!-- Themes area-->
     <div id="ThemeButtonD">
         <button class="themeB" onclick="changeTheme()">Dark</button>
     </div>
@@ -263,6 +277,7 @@
         <button class="themeBdefault" onclick="changeThemeDefault()">Def.</button>
     </div>
 
+    
     <script>
         // Navigates to a new page or external URL when a button is clicked
         function navigateTo(url) {
@@ -304,19 +319,29 @@
         function toggleText0() {
     var textToShow = document.getElementById("DescriptionText");
     var buttonToggleText0 = document.getElementById("buttonToggleText0");
+    var rotation = 0;
 
-    // Sprawdzenie, czy element istnieje
+    /* Toggle button function */
     if (buttonToggleText0) {
-        // Przełączanie widoczności tekstu
-        if (textToShow.style.display === "none") {
-            textToShow.style.display = "block";
-        } else {
-            textToShow.style.display = "none";
-        }
-    }
-}
+        buttonToggleText0.onclick = function() {
+            if (textToShow.style.display === "none" || textToShow.style.display === "") {
+                textToShow.style.display = "block";
+                setTimeout(function() {
+                    textToShow.style.opacity = "1";
+                }, 10);
+            } else {
+                textToShow.style.opacity = "0";
+                setTimeout(function() {
+                    textToShow.style.display = "none";
+                }, 430);
+            }
 
+            rotation += 180;
+            buttonToggleText0.style.transform = "rotate(" + rotation + "deg)";
+        };
+
+  }
+}
     </script>
 </body>
-
 </html>
