@@ -1,0 +1,124 @@
+<!--
+
+Author: Antos1812
+
+Description: 
+A simple countdown timer that allows the user to input 
+hours, minutes, and seconds. When the "Start" button is 
+clicked, it counts down the time and displays it in 
+HH:MM:SS format. The timer can also be reset at any time.
+
+       _                 
+      / \              
+     / _ \  
+    / /_\ \ 
+   / /   \ \
+  /_/     \_\NTOS  
+
+-->
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Odliczanie czasu</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #9596c1;
+        }
+
+        #title {
+            font-size: 62px;
+            margin-bottom: 36px;
+        }
+
+        input, button {
+            margin: 8px;
+            width: 150px;
+            height: 50px;
+            font-size: 18px;
+            border: 2px solid #0b0e66;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        input:focus, button:hover {
+            background-color: #3a3ee2;
+            color: white;
+        }
+
+        h3 {
+            margin-top: 25px;
+            font-size: 3em;
+        }
+		
+	    #autor {
+		    margin-top: 30px;
+			font-size: 22px;
+		}
+    </style>
+</head>
+<body>
+
+    <h1 id="title">Odliczacz</h1>
+	
+	<h3 id="czas">00:00:00</h3>
+    
+    <input type="number" id="Godzina" placeholder="Godziny" min="0" />
+    <input type="number" id="Minuta" placeholder="Minuty" min="0" />
+    <input type="number" id="Sekunda" placeholder="Sekundy" min="0" />
+    <button onclick="Odliczanie()">Start</button>
+    <button onclick="Reset()">Reset</button>
+
+    <h4 id="autor">Odliczacz by Antos1812</h4>
+
+    <script>
+        let interval;
+
+        function formatTime(totalSekundy) {
+            const godzina = String(Math.floor(totalSekundy / 3600)).padStart(2, '0');
+            const minuta = String(Math.floor((totalSekundy % 3600) / 60)).padStart(2, '0');
+            const sekunda = String(totalSekundy % 60).padStart(2, '0');
+            return `${godzina}:${minuta}:${sekunda}`;
+        }
+
+        function Odliczanie() {
+            let godziny = parseInt(document.getElementById("Godzina").value) || 0;
+            let minuty = parseInt(document.getElementById("Minuta").value) || 0;
+            let sekundy = parseInt(document.getElementById("Sekunda").value) || 0;
+            let totalSekundy = godziny * 3600 + minuty * 60 + sekundy;
+
+            if (totalSekundy > 0) {
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    document.getElementById("czas").textContent = formatTime(totalSekundy);
+                    totalSekundy--;
+
+                    if (totalSekundy < 0) {
+                        clearInterval(interval);
+                        alert("Czas się skończył!");
+                    }
+                }, 1000);
+            } else {
+                alert("Podaj czas większy niż 0!");
+            }
+        }
+
+        function Reset() {
+            clearInterval(interval);
+            document.getElementById("czas").textContent = "00:00:00";
+            document.getElementById("Godzina").value = "";
+            document.getElementById("Minuta").value = "";
+            document.getElementById("Sekunda").value = "";
+        }
+    </script>
+</body>
+</html>
