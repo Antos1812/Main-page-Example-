@@ -246,3 +246,10 @@ body {
     border: 2.7px solid #1d1c43;
     z-index: 13;
 }
+
+#timer
+{
+    margin-left: 25px;
+    color: white;
+
+}
